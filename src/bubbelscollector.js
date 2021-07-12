@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+
 `;
 const Container = styled.div`
   max-width: 100vw;
@@ -33,7 +34,7 @@ const BGbubbels = styled.ul`
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 1;
+  z-index: 100;
 `;
 
 const BGli = styled.li`

@@ -6,7 +6,7 @@ import eye from "./eye.png";
 import code from "./code.png";
 import "../exceptionalstyles.css";
 import "../RNModal/Modal.css";
-// import Modal from "../RNModal/Modal";
+import Fade from 'react-reveal/Fade';
 import Modal from "./Modal";
 
 let newDate = new Date();
@@ -135,7 +135,7 @@ function PFolio() {
   }, [tag]);
 
   return (
-    <div className="PFbg">        
+    <div className="PFbg">
       {/* {modalOpen && <Modal setOpenModal={setModalOpen, console.log("zzzzzzz" + modalOpen)} />} */}
 
       <div className="tags">
@@ -175,55 +175,56 @@ function PFolio() {
       <div className="PFcontainer">
         {filteredImages.map(image => (
           <>
-            <ImageCard key={image.id} className="imageCard">
-              <img
-                className="image"
-                src={`/images/${image.imageName}`}
-                alt=""
-              />{" "}
-              <Overlay className="overlay">
-                {" "}
-                <div className="eyewrap">
-                  <div className="eyewrapline">
-                    <Eyebtn
-                      target="_blank"
-                      rel="noopener"
-                      href={`${image.seelink}`}
-                    >
-                      <Eyetxt
-                        target="_blank"
-                        rel="noopener"
-                        href={`${image.seelink}`}
-                      >
-                        <Eyeimg src={eye} alt="eye" />
-                        <div className="eyediv">App</div>
-                      </Eyetxt>
-                    </Eyebtn>
-                    <Eyebtn
-                      id="eyecode"
-                      target="_blank"
-                      rel="noopener"
-                      href={`${image.codelink}`}
-                    >
-                      <Eyetxt
-                        target="_blank"
-                        rel="noopener"
-                        href={`${image.codelink}`}
-                      >
-                        <Eyeimg src={code} alt="eye" />
-                        <div className="eyediv">Code</div>
-                      </Eyetxt>
-                    </Eyebtn>
-                  </div>
-                  <div className="eyewrapcol">
-                    <Title>{image.title}</Title>
-                    <Softtitle>{image.software}</Softtitle>
-                    <Softtext>{image.description}</Softtext>
-                    <Softdate>{image.date}</Softdate>
-                  </div>
-                </div>
-              </Overlay>
-            </ImageCard>
+            <Fade bottom cascade key={image.id} >
+                <ImageCard className="imageCard">
+                  <img
+                    className="image"
+                    src={`/images/${image.imageName}`}
+                    alt=""
+                  />
+                  <Overlay className="overlay">
+                    <div className="eyewrap">
+                      <div className="eyewrapline">
+                        <Eyebtn
+                          target="_blank"
+                          rel="noopener"
+                          href={`${image.seelink}`}
+                        >
+                          <Eyetxt
+                            target="_blank"
+                            rel="noopener"
+                            href={`${image.seelink}`}
+                          >
+                            <Eyeimg src={eye} alt="eye" />
+                            <div className="eyediv">App</div>
+                          </Eyetxt>
+                        </Eyebtn>
+                        <Eyebtn
+                          id="eyecode"
+                          target="_blank"
+                          rel="noopener"
+                          href={`${image.codelink}`}
+                        >
+                          <Eyetxt
+                            target="_blank"
+                            rel="noopener"
+                            href={`${image.codelink}`}
+                          >
+                            <Eyeimg src={code} alt="eye" />
+                            <div className="eyediv">Code</div>
+                          </Eyetxt>
+                        </Eyebtn>
+                      </div>
+                      <div className="eyewrapcol">
+                        <Title>{image.title}</Title>
+                        <Softtitle>{image.software}</Softtitle>
+                        <Softtext>{image.description}</Softtext>
+                        <Softdate>{image.date}</Softdate>
+                      </div>
+                    </div>
+                  </Overlay>
+                </ImageCard>
+            </Fade>
           </>
         ))}
         {/* <button
@@ -255,7 +256,6 @@ function PFolio() {
         >
           Open
         </button> */}
-
       </div>
     </div>
   );

@@ -4,6 +4,22 @@ import dwl from "./IMG/download.svg";
 import styled from "styled-components";
 import "./button.css";
 import Bcol from "./bubbelscollector.js";
+import { motion } from "framer-motion";
+import Bounce from 'react-reveal/Bounce';
+
+// const containerVariants = {
+//   hidden: {
+//     opacity: 0
+//   },
+//   visible: {
+//     opacity: 1,
+//     transition: { delay: 1.5, duration: 1.5 }
+//   },
+//   exit: {
+//     x: "-100vh",
+//     transition: { ease: "easeInOut" }
+//   }
+// };
 
 const Homesection = styled.div`
   font-family: "roboto";
@@ -26,7 +42,7 @@ const Homewrapper = styled.div`
   justify-content: center;
 `;
 const Hometitle = styled.div`
-  z-index: 1;
+  z-index: 800;
   justify-content: center;
   flex-direction: column;
   margin-right: -50vw;
@@ -64,14 +80,15 @@ const Homecontainer = styled.div`
 function homesection() {
   return (
     <Homesection>
-      {" "}
-      <Bcol />
-      <Homewrapper>
+      <Homewrapper>        <Bounce left>
         <Hometitle>
-          Looking <br />
-          for a <br />
-          React <br />
-          Developer?
+          {/* <motion.div> */}
+            Looking <br />
+            for a <br />
+            React <br />
+            Developer?
+          {/* </motion.div> */}        
+
           <div>
             <button className="custom-btn btn-12">
               <span>3 CV's FR-NL-EN</span>
@@ -82,7 +99,8 @@ function homesection() {
               </span>
             </button>
           </div>
-        </Hometitle>
+        </Hometitle></Bounce>      <Bcol />
+
       </Homewrapper>
       <Homecontainer>
         <Homeimage src={beneface} alt="beneface" />

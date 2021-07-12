@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./contact1.css";
 import homemap from "./homemap.jpg";
 import skyline from "./skyline.png";
-import styled from "styled-components";
+import styled from "styled-components";import Bounce from 'react-reveal/Bounce';
+
 
 const Maplink = styled.a`
   cursor: pointer !important;
@@ -243,7 +244,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="contactWrapper">
+      <div className="contactWrapper"><Bounce left>
         <form className="contact-form">
           <h2>Let's meet ;-)</h2>
           <div className="form-content">
@@ -316,7 +317,7 @@ const Contact = () => {
             onClick={handleSubmit}
           />
           <div className="form-message"></div>
-        </form>{" "}
+        </form></Bounce>
         <Brimagewrapper>
           <Brimage src={skyline} alt="skylineBrussel" />{" "}
         </Brimagewrapper>

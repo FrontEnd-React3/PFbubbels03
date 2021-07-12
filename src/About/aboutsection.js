@@ -3,6 +3,10 @@ import klas from "./IMGabout/class.jpg";
 import card from "./IMGabout/letmeseebc.jpg";
 import styled from "styled-components";
 import Aos from "aos";
+import "animate.css/animate.min.css";
+import ScrollAnimation from "react-animate-on-scroll";
+import Bounce from 'react-reveal/Bounce';
+
 import "aos/dist/aos.css";
 
 const Aboutsectiontag = styled.div`
@@ -70,6 +74,10 @@ const Aboutimg = styled.img`
     width: 70vw !important;
   }
 `;
+// const ScrollAnimation = styled.div`
+//   color: black;
+//   z-index: 999;
+// `;
 const Bcard = styled.img`
   height: auto;
   position: absolute;
@@ -88,16 +96,18 @@ const Bcard = styled.img`
 `;
 
 function Aboutsection() {
-  useEffect(() => {Aos.init({ duration: 2000 }); }, [])
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <Aboutsectiontag>
-      <Aboutcontainer>
-      <div data-aos="fade-right">
+      <Aboutcontainer><Bounce left>
         <Abouttitle>
           Making <br />
           iT <br />
           happen
-        </Abouttitle></div>
+        </Abouttitle></Bounce>
+
         <Abouttext>
           I have been a graphic designer since 1989, went back to school and
           learned how to code.

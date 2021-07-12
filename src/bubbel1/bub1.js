@@ -18,7 +18,7 @@ const Overlay = styled.div`
   border-radius: 50%;
   background: rgba(0, 119, 255, 0.3);
   transition: 0.5s ease;
-  z-index: 10;
+  z-index: 900 !important;
   position: absolute;
 `;
 const PicWrapper = styled.div`
@@ -71,7 +71,9 @@ const BodyWrapper = styled.div`
   }
 `;
 
-const Body = styled.body``;
+const Body = styled.body`
+  z-index: 999 !important;
+`;
 
 function ref1() {
   return (
